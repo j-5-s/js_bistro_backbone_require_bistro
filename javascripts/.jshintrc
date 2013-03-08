@@ -1,0 +1,5 @@
+{
+
+    "predef": ["define", "app", "Backbone", "_","$","require"],
+    "indent"        : 4         // Specify indentation spacing
+}
