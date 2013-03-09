@@ -13,13 +13,14 @@ define([
       ""        : "defaultPage",
     },
     defaultPage: function() {
-      var registrationForm = new RegistrationFormView();
-      $('.form-wrapper').html(registrationForm.render().el);
+
 
 
 
       var c = new ReservationCollection();
-       var pendingReservationsView = new PendingReservationsView({ collection: c });
+      var registrationForm = new RegistrationFormView({collection:c});
+      $('.form-wrapper').html(registrationForm.render().el);
+      var pendingReservationsView = new PendingReservationsView({ collection: c });
 
     $('#pending-reservations').html(pendingReservationsView.render().el);
 
@@ -31,11 +32,7 @@ define([
       });
 
        c.add(pendingReservationModel);
-       setTimeout(function(){
-          console.log('test');
 
-          c.remove(pendingReservationModel)
-       },1000);
 
 
     },

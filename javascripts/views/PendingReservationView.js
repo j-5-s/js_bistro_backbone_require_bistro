@@ -1,10 +1,13 @@
 define([
-  'text!templates/pending-reservation.html'
+  'text!templates/pending-reservation.html?asd'
   ], function( pendingReservation ) {
   var RegistrationFormView = Backbone.View.extend({
     initialize: function() {
-      _.bindAll(this, 'render', 'removeThis');
+      _.bindAll(this, 'render', 'removeThis', 'toggleActive');
       this.model.on('destroy', this.removeThis)
+    },
+    events: {
+      'click .pending-reservation': 'toggleActive'
     },
     render: function() {
       var cid = this.model.cid;
@@ -16,7 +19,13 @@ define([
     removeThis: function() {
 
       this.$el.remove();
+    },
+    toggleActive: function() {
+
+      $('.pending-slot').removeClass('selected');
+      this.$el.find('.pending-slot').addClass('selected');
     }
+
 
   });
   return RegistrationFormView;
