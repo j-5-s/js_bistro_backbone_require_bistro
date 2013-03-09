@@ -1,0 +1,8 @@
+<div class="four columns">
+	<div class="confirmed-slot">
+		<div class="available-percentage" style="width: <%= c.getPercentComplete() %>%;"></div>
+		<div class="time-slot"><%= c.reservation_time %></div>
+		<a href="#" class="list-reservations">Reservations</a> <!-- Anchor class "list-reservations" opens dialog with reservations listed (*Extra Credit*) -->
+		<div class="available-number"><%= c.capacity - c.getNumberPeople() %> Available</div>
+	</div>
+</div>

@@ -1,10 +1,11 @@
 define([
-  'text!templates/pending-reservation.html?asd'
+  'text!templates/pending-reservation.html'
   ], function( pendingReservation ) {
   var RegistrationFormView = Backbone.View.extend({
     initialize: function() {
       _.bindAll(this, 'render', 'removeThis', 'toggleActive');
-      this.model.on('destroy', this.removeThis)
+      this.model.on('removePending', this.removeThis);
+
     },
     events: {
       'click .pending-reservation': 'toggleActive'

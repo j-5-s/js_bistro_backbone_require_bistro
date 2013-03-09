@@ -24,7 +24,7 @@ define([
       this.$el.append(pendingReservation.render().el);
     },
     removeOne: function(m) {
-      m.destroy();
+      m.trigger('removePending');
     }
 
 

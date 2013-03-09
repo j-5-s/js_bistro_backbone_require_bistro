@@ -6,6 +6,7 @@ define([
     initialize: function() {
       _.bindAll(this, 'render', 'addReservation');
       console.log('c',this.collection);
+
     },
     events : {
       'submit #add-reservation': 'addReservation'
