@@ -1,4 +1,4 @@
-define(['views/DefaultView'], function(DefaultView) {
+define(['views/RegistrationFormView'], function(RegistrationFormView) {
   var AppRouter = Backbone.Router.extend({
     initialize: function() {
     },
@@ -7,8 +7,8 @@ define(['views/DefaultView'], function(DefaultView) {
       ""        : "defaultPage",
     },
     defaultPage: function() {
-      var v = new DefaultView();
-      $('#default-view-wrapper').html(v.render().el);
+      var registrationForm = new RegistrationFormView();
+      $('.form-wrapper').html(registrationForm.render().el);
     },
   });
 
