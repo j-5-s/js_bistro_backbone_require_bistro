@@ -325,3 +325,7 @@ footer {
   text-shadow: 0px 1px 0px white;
   text-align: center;
 }
+
+#pending-reservations {
+  min-height: 165px;
+}
