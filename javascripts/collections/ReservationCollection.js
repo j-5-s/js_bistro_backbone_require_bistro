@@ -5,10 +5,20 @@ define(['models/ReservationModel'], function( ReservationModel ) {
     reservation_time: null,
     capacity: 50,
     getNumberPeople: function() {
-      return this.reduce(function(memo, model){return memo + model.get('number'); }, 0);
+      var n = 0;
+      var models = this.models;
+      for (var i = 0; i < models.length; i ++) {
+        n = n +  parseInt(models[i].get('number'),10);
+      }
+
+      return n
     },
     getPercentComplete: function() {
-      return Math.round(this.capacity/this.getNumberPeople());
+
+      var p = Math.round((this.getNumberPeople()/this.capacity) *100);
+
+      return p;
+
     }
   });
 

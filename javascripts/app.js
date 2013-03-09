@@ -46,9 +46,8 @@ define([
       for (var i = 0; i < 12; i ++) {
         var confirmedReservationCollection = new ReservationCollection();
         confirmedReservationCollection.reservation_time = times[i];
-        console.log(confirmedReservationCollection)
 
-        var reservationCollectionView = new ReservationCollectionView({collection:confirmedReservationCollection});
+        var reservationCollectionView = new ReservationCollectionView({collection:confirmedReservationCollection,pending_collection: c});
 
         $('#confirmed-reservations').append(reservationCollectionView.render().el)
       }
